@@ -2,7 +2,7 @@ import functools
 from flask import (Blueprint,flash,g,redirect,render_template,request,session,url_for)
 from werkzeug.security import (generate_password_hash,check_password_hash)
 
-from messenger2.db import getDb
+from messenger1.db import getDb
 
 bp = Blueprint('auth',__name__,url_prefix='/auth')
 
