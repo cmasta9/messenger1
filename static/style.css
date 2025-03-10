@@ -1,0 +1,57 @@
+body{
+    background-color: black;
+    color: yellow;
+    margin:auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.createBox{
+    border: 5px;
+    border-radius: 5px;
+    background-color: green;
+    width:50%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#body{
+    width: 69%;
+    height: auto;
+    background-color: darkgreen;
+}
+
+.flash{
+    border: 5px;
+    border-radius: 10px;
+    background-color: red;
+    color: yellow;
+    width: fit-content;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.message{
+    border: 1px;
+    border-radius: 10px;
+    background-color: darkgreen;
+    min-width: 20%;
+    width: fit-content;
+    padding:20px;
+    margin:auto;
+    margin-top: 5px;
+}
+
+.action{
+    border-radius: 20px;
+    border: 1px;
+    background-color: red;
+    width:fit-content;
+    padding: 3px;
+}

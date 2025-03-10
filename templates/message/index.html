@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Messages{% endblock %}</h1>
+  {% if g.user %}
+  <div class="createBox">
+    <form method="post">
+      <label for="body">Message: </label>
+      <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+      <input type="submit" value="Send">
+    </form>
+  </div>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% for message in messages %}
+    <div class="message">
+      <p><b>{{ message['author'] }}</b>: {{ message['body'] }}</p>
+      {% if g.user['id'] == message['author_id'] %}
+          <a class="action" href="{{ url_for('message.update', id=message['id']) }}">Edit</a>
+      {% endif %}
+    </div>
+    {% if not loop.last %}
+    {% endif %}
+  {% endfor %}
+{% endblock %}

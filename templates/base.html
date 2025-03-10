@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %} - Messenger</title>
+<link href="{{url_for('static',filename='style.css')}}" rel="stylesheet">
+
+<nav>
+    <h1>Messenger</h1>
+    <ul>
+        {% if g.user %}
+            <li><span>{{g.user['username']}}</span>
+            <li><a href="{{url_for('auth.logout')}}">Log out</a>
+        {% else %}
+            <li><a href="{{url_for('auth.login')}}">Log in</a>
+            <li><a href="{{url_for('auth.register')}}">Register</a>
+        {% endif %}
+    </ul>
+</nav>
+
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    {% for mess in get_flashed_messages() %}
+        <div class="flash">{{mess}}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>
