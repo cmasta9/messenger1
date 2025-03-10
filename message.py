@@ -3,8 +3,8 @@ from flask import (
 )
 from werkzeug.exceptions import abort
 
-from messenger2.auth import loginReq
-from messenger2.db import getDb
+from messenger1.auth import loginReq
+from messenger1.db import getDb
 
 bp = Blueprint('message', __name__)
 
